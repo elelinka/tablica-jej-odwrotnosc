@@ -5,27 +5,24 @@ import java.util.Random;
 
 public class ArrayUtils {
 
-    public int[] reverseArray() {
+    public static int[] reverseArray(int newLength) {
 
-        int[] originalArray = originalArray();
-        int[] array = Arrays.copyOf(originalArray, 20);
+        int[] originalArray = originalArray(newLength / 2);
+        int[] array = Arrays.copyOf(originalArray, newLength);
 
-        for (int i = 10; i < array.length; i++) {
-            array[i] = originalArray[array.length - i - 1];
+        for (int i = newLength / 2; i < newLength; i++) {
+            array[i] = originalArray[newLength - i - 1];
         }
         return array;
     }
 
-    private int[] originalArray() {
-        int[] array = new int[10];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = randomNumbers();
-        }
-        return array;
-    }
+    private static int[] originalArray(int arrayLength) {
+        int[] array = new int[arrayLength];
 
-    private int randomNumbers() {
         Random random = new Random();
-        return random.nextInt(10);
+        for (int i = 0; i < arrayLength; i++) {
+            array[i] = random.nextInt(100);
+        }
+        return array;
     }
 }
