@@ -6,9 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         int length = 20;
-        int[] array = ArrayUtils.reverseArray(length);
 
-        for (int i : array) {
+        for (int i : ArrayUtils.reverseArray(length)) {
             System.out.print(i + " ");
         }
     }
