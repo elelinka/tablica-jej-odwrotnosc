@@ -9,12 +9,12 @@ public class Main {
     public static void main(String[] args) {
         ArrayUtils array = new ArrayUtils();
 
-        int[] tab = new int[10];
+        String arrayS = Arrays.toString(array.reverseArray())
+                .replace(',', ' ')
+                .replace('[', '\u0000')
+                .replace(']', '\u0000');
 
-        int[] original = array.originalArray(tab);
-
-        int[] tab3 = array.reverseArray(original);
-        System.out.println(Arrays.toString(tab3));
+        System.out.println(arrayS);
 
 
     }
