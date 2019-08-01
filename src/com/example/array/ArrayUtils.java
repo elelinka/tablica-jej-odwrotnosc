@@ -10,8 +10,12 @@ public class ArrayUtils {
         int[] originalArray = originalArray(newLength / 2);
         int[] array = Arrays.copyOf(originalArray, newLength);
 
-        for (int i = newLength / 2; i < newLength; i++) {
-            array[i] = originalArray[newLength - i - 1];
+        if (newLength % 2 == 0) {
+            for (int i = newLength / 2; i < newLength; i++) {
+                array[i] = originalArray[newLength - i - 1];
+            }
+        } else {
+            System.out.println("Podano nieparzysty rozmiar tablicy: " + newLength);
         }
         return array;
     }
